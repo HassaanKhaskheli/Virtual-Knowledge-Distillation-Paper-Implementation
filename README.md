@@ -1,6 +1,3 @@
-# Virtual-Knowledge-Distillation-Paper-Implementation
-An implementation of the virtual knowledge distillation concept presented in the paper "A Virtual Knowledge Distillation via Conditional GAN" published by SIHWAN KIM, Big Data &amp; AI Laboratory, Hana Institute of Technology
-
 # Virtual Knowledge Distillation via Conditional GAN
 
 This repository contains the implementation of the research paper "A Virtual Knowledge Distillation via Conditional GAN" by Sihwan Kim, Big Data & AI Laboratory, Hana Institute of Technology. The implementation uses a Conditional GAN (cGAN) framework to facilitate knowledge transfer between a large teacher model and a smaller student model, enabling efficient deployment of deep learning models without compromising on accuracy.
@@ -28,7 +25,7 @@ The paper proposes a novel knowledge distillation framework using Conditional GA
 ```
 
 ### Important Note
-- **Generator, Teacher, and Student Models:** The model files (e.g., weights and architecture definitions) are NOT included in this repository due to size constraints. However, the complete code to train these models is provided in the `vkd.ipynb` file.
+- **Generator, Teacher, and Student Models:** The model files (.pth) are NOT included in this repository due to size constraints. However, the complete code to train these models is provided in the `vkd.ipynb` file.
 
 ---
 
@@ -44,20 +41,19 @@ To run the code in this repository, ensure you have the following installed:
   - torchvision
   - numpy
   - matplotlib
-  - tqdm
-  - scikit-learn
 
 Install the required libraries by running:
 
 ```bash
-pip install torch torchvision numpy matplotlib tqdm scikit-learn
+# pip install torch torchvision matplotlib numpy
 ```
 
 ### Running the Notebook
 1. Open the `vkd.ipynb` file in Jupyter Notebook or Google Colab.
 2. Follow the cells sequentially to:
-   - Define the Conditional GAN architecture.
+   - Train the teacher model
    - Train the generator and discriminator models.
+   - Define the Conditional GAN architecture.
    - Perform knowledge distillation using the trained teacher model.
    - Train the student model with synthesized feature representations.
 
@@ -65,7 +61,7 @@ pip install torch torchvision numpy matplotlib tqdm scikit-learn
 The notebook generates:
 - Training logs for the generator, discriminator, teacher, and student models.
 - Visualization of synthesized feature representations.
-- Evaluation metrics (accuracy, loss) for the student model.
+- Evaluation metrics (accuracy) for the student model.
 
 ---
 
@@ -77,6 +73,10 @@ This implementation supports multiple datasets, and the specific dataset to be u
 - Custom datasets (requires preprocessing steps defined in the notebook).
 
 ---
+
+## Models
+- Teacher Model : RESNET-50
+- Student Model: RESNET-18
 
 ## How It Works
 
